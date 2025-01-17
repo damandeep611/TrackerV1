@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { Todo } from "./types/Todo.Types"
 import TodoForm from "./components/TodoForm"
 import TodoList from "./components/TodoList"
+import API_BASE_URL from "./config/api";
 
-const API_BASE_URL = 'http://localhost:5000/api'
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([])
