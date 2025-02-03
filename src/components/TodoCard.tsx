@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Todo } from "../types/Todo.Types";
 import { Pencil, Trash } from "lucide-react";
 import { dateFormat } from "../utils/dateFormat";
@@ -21,6 +21,15 @@ const TodoCard: React.FC<TodoCardProps> = ({
   const [isEditing, setIsEditing] = useState(false);
   const [editedTodo, setEditedTodo] = useState(todo);
 
+  // reflecting the changes on the timespend on the todoCard
+  useEffect(() => {
+    const parseDuration = (durationString: string) => {
+      const hours = durationString.match(/(\d+)h/)?.[1] || "0";
+      const minutes = durationString.match(/(\d+)m/)?.[1] || "0";
+      return parseInt(hours) * 60 + parseInt(minutes);
+    };
+    setTimeSpent(parseDuration(todo.duration));
+  }, [todo.duration]);
   //handle the edited submit
   const handleTimeUpdate = (minutes: number) => {
     const newTime = timeSpent + minutes;
