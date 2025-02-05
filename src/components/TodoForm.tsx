@@ -51,7 +51,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
           />
           <details className="bg-gray-50 p-4 rounded-lg">
             <summary className="cursor-pointer text-sm text-gray-600 font-medium">
-              Optional details
+              Optional deta
             </summary>
             <div className="mt-4 space-y-4">
               <input

@@ -111,7 +111,7 @@ export const TodoList = () => {
     }
   };
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className=" mx-auto p-6 bg-gray-200">
       {error && (
         <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
           {error}
@@ -124,7 +124,7 @@ export const TodoList = () => {
             value={newTodo.title}
             onChange={(e) => setNewTodo({ ...newTodo, title: e.target.value })}
             placeholder="Enter todo title (required)"
-            className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 rounded-lg focus:outline-none border border-gray-200 focus:ring-2 focus:ring-blue-500"
             required
           />
           <details className="bg-gray-50 p-4 rounded-lg">
@@ -168,7 +168,7 @@ export const TodoList = () => {
               No todos yet. Create one
             </div>
           ) : (
-            <div className="">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
               {todos.map((todo) => (
                 <TodoCard
                   key={todo._id}

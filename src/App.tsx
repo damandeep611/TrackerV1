@@ -1,12 +1,14 @@
 import { TodoList } from "./components/TodoList";
+import Sidebar from "./Dashboard/Sidebar";
 
 function App() {
   return (
-    <section className="min-h-screen bg-gray-700 py-8">
-      <div className="container mx-auto px-4">
+    <div className="flex h-screen bg-gray-50 ">
+      <Sidebar />
+      <main className="flex-1   overflow-y-auto">
         <TodoList />
-      </div>
-    </section>
+      </main>
+    </div>
   );
 }
 

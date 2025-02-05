@@ -51,7 +51,7 @@ const TodoCard: React.FC<TodoCardProps> = ({
 
   if (isEditing) {
     return (
-      <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div className="bg-white max-w-sm  rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
         <div className="space-y-3">
           <input
             type="text"
@@ -106,14 +106,16 @@ const TodoCard: React.FC<TodoCardProps> = ({
   }
 
   return (
-    <div className="bg-white rounded-lg p-4  m-2 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white max-w-sm rounded-lg p-4  m-2 shadow-sm hover:shadow-md transition-shadow">
       <div className="space-y-3">
         <div className="flex justify-between items-start">
+          {/* task card tag  */}
           {todo.tag && (
-            <span className="px-2 py-1 text-sm bg-gray-100 rounded-md text-gray-600">
+            <span className="px-2 py-1 text-xs bg-blue-100  rounded-md text-blue-600 capitalize">
               {todo.tag}
             </span>
           )}
+          {/* task card edit and delete buttons */}
           <div className="flex space-x-2">
             <button
               onClick={handleEdit}
@@ -131,8 +133,12 @@ const TodoCard: React.FC<TodoCardProps> = ({
             </button>
           </div>
         </div>
-        <h3>{todo.title}</h3>
-        {todo.description && <p>{todo.description}</p>}
+        {/* task card title */}
+        <h3 className="text-lg font-semibold">{todo.title}</h3>
+        {/* task card description */}
+        {todo.description && (
+          <p className="text-sm text-gray-500">{todo.description}</p>
+        )}
         <div className="flex items-center text-sm text-gray-500 space-x-2">
           <span>{dateFormat(todo.date)}</span>
           <span>.</span>
