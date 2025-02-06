@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Todo } from "../types/Todo.Types";
+import { Todo } from "../../types/Todo.Types";
 import TodoCard from "./TodoCard";
 import axios from "axios";
-import API_BASE_URL from "../config/api";
+import API_BASE_URL from "../../config/api";
 
 export const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);

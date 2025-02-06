@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Todo } from "../types/Todo.Types";
+import { Todo } from "../../types/Todo.Types";
 import { Pencil, Trash } from "lucide-react";
-import { dateFormat } from "../utils/dateFormat";
+import { dateFormat } from "../../utils/dateFormat";
 
 interface TodoCardProps {
   todo: Todo;
