@@ -43,7 +43,7 @@ export default function Hero() {
           className="mb-9 max-w-2xl text-center text-base text-zinc-400 sm:text-lg md:text-xl"
           style={{ opacity: 1, transform: "none" }}
         >
-          Manage Tasks and Learn Skills with Time tracking
+          Manage Tasks and Track Your skills Learning By hours
         </p>
         <div
           className="flex flex-col items-center gap-4 sm:flex-row"
